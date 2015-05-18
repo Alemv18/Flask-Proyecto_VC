@@ -70,9 +70,35 @@ class VacanteForm(Form):
         validators=[
             DataRequired(),
         ])
-    imagen = FileField('Imagen', validators=[DataRequired(),])
+    imagen = FileField('Imagen1', validators=[DataRequired(),])
+     imagen2 = FileField('Imagen2', validators=[DataRequired(),])
+      imagen3 = FileField('Imagen3', validators=[DataRequired(),])
     direccion = StringField('Direccion', validators=[DataRequired(),])
 
 class LoginForm(Form):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
+
+ class ConfigProfile(Form):
+     imagen = FileField('ImagenUsuario', validators=[DataRequired(),])
+    nombreUsuario= StringField(
+        'nombreUsuario',
+         validators=[
+            DataRequired(),
+            titulo_existe
+        ])
+    descripcion = TextAreaField(
+        'Descripcion',
+        validators=[
+            DataRequired(),
+        ])
+    email = StringField(
+        'Email',
+        validators=[
+            DataRequired(),
+            Email(),
+            email_existe
+        ])
+
+
+
