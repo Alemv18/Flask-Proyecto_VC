@@ -81,24 +81,46 @@ class LoginForm(Form):
 
  class ConfigProfile(Form):
      imagen = FileField('ImagenUsuario', validators=[DataRequired(),])
-    nombreUsuario= StringField(
-        'nombreUsuario',
+     firstName=StringField(
+        'First Name',
          validators=[
             DataRequired(),
             titulo_existe
         ])
-    descripcion = TextAreaField(
-        'Descripcion',
+         middleName=StringField(
+        'Middle Name',
+         validators=[
+            DataRequired(),
+            titulo_existe
+        ])
+         lastName=StringField(
+        'Last Name',
+         validators=[
+            DataRequired(),
+            titulo_existe
+        ])
+        fechaNacimiento = TextAreaField(
+        'Fecha de Nacimiento',
         validators=[
             DataRequired(),
         ])
-    email = StringField(
+           email = StringField(
         'Email',
         validators=[
             DataRequired(),
             Email(),
             email_existe
         ])
-
+        telefono = TextAreaField(
+        'Telefono',
+        validators=[
+            DataRequired(),
+        ])
+        descripcion = TextAreaField(
+        'Descripcion',
+        validators=[
+            DataRequired(),
+        ])
+   
 
 
